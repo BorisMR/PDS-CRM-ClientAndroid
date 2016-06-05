@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">PDS-CRM-ClientAndroid</string>
     <string name="action_settings">Settings</string>
+    <string name="busqueda_simple">Busqueda Simple</string>
+    <string name="hint_busqueda_cadena">Ingrese la cadena de busqueda</string>
+    <string name="busqueda_avanzada">Busqueda Avanzada</string>
+    <string name="label_busuqeda_run">Run</string>
+    <string name="label_busqueda_nombre">Nombre</string>
+    <string name="label_busqueda_apellido">Apellido</string>
+    <string name="label_busqueda_email">eMail</string>
+    <string name="label_busqueda_fono">Fono</string>
+    <string name="label_busqueda_direccion">Direccion</string>
+    <string name="label_busqueda_genero">Genero</string>
+    <string name="label_resultados_true">Se encontraron los siguientes resultados</string>
+    <string name="label_resultados_false">No se encontraron resultados</string>
 </resources>
