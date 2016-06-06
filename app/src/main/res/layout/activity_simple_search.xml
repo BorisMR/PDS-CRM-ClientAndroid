@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/busqueda_simple"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.07" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cadenaBusqueda"
+        android:hint="@string/hint_busqueda_cadena"
+        android:layout_weight="0.05" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingButtonBuscarSimple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_menu_search" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_buscar"
+        android:id="@+id/buttonBuscarSimple"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:src="@android:drawable/ic_dialog_email"/>
+
+</LinearLayout>
