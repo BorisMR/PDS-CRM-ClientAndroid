@@ -1,7 +1,6 @@
 package com.nocompany.boris.pds_crm_clientandroid;
 
 import android.os.AsyncTask;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,7 +44,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
         buttonBuscarSimple.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if(cadenaBusqueda.getText().toString().equals("") && cadenaBusqueda.getText().length() != 0){
+                if(!cadenaBusqueda.getText().toString().equals("") && cadenaBusqueda.getText().length() != 0){
                     criteria = cadenaBusqueda.getText().toString();
                     generateAsyncTask task = new generateAsyncTask();
                     task.execute();
