@@ -22,7 +22,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
     TextView textViewResult;
     Button buttonBuscarSimple;
 
-    String IpWS = "192.168.1.40"; //ej 192.168.0.1
+    String IpWS = "192.168.20.38"; //ej 192.168.0.1
     String NAMESPACE = "http://service";
     String URL = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO?wsdl";
     String SOAP_ACTION = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO";
