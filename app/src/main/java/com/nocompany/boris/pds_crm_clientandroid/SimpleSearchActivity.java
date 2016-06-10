@@ -22,11 +22,11 @@ public class SimpleSearchActivity extends AppCompatActivity {
     TextView textViewResult;
     Button buttonBuscarSimple;
 
-    String IpWS = "192.168.20.38"; //ej 192.168.0.1
+    String IpWS = "192.168.20.38";
     String NAMESPACE = "http://query.addProperty(propInf);service";
     String URL = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO?wsdl";
     String SOAP_ACTION = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO";
-    String METHOD_NAME = "busquedaSimple"; //busquedaSimpleReturn cadenaBusqueda
+    String METHOD_NAME = "busquedaSimple";
 
     String cadenaBusquedaStr;
     String result;
@@ -55,6 +55,11 @@ public class SimpleSearchActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Se comunica con el Servicio y le entrega la cadena de busqueda
+     *
+     * @param cadenaBusquedaStr
+     */
     public void getResult(String cadenaBusquedaStr){
         SoapObject query = new SoapObject(NAMESPACE, METHOD_NAME);
         PropertyInfo propInf = new PropertyInfo();

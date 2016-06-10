@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
@@ -16,9 +19,9 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Clase encargada de interactuar con el formulario y efectuar busquedas
+ */
 public class AdvanceSearchActivity extends AppCompatActivity {
 
     EditText editTextRun;
@@ -135,55 +138,47 @@ public class AdvanceSearchActivity extends AppCompatActivity {
                           String strGenero){
 
         SoapObject query = new SoapObject(NAMESPACE, METHOD_NAME);
-        List<PropertyInfo> properties = new ArrayList<PropertyInfo>();
         PropertyInfo propInf = new PropertyInfo();
 
         propInf.setName("run");
         propInf.setValue(strRun);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         propInf = new PropertyInfo();
         propInf.setName("nombre");
         propInf.setValue(strNombre);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         propInf = new PropertyInfo();
         propInf.setName("apellido");
         propInf.setValue(strApellido);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         propInf = new PropertyInfo();
         propInf.setName("email");
         propInf.setValue(strEmail);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         propInf = new PropertyInfo();
         propInf.setName("fono");
         propInf.setValue(strFono);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         propInf = new PropertyInfo();
         propInf.setName("direccion");
         propInf.setValue(strDireccion);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         propInf = new PropertyInfo();
         propInf.setName("genero");
         propInf.setValue(strGenero);
         propInf.setType(String.class);
-        properties.add(propInf);
         query.addProperty(propInf);
 
         SoapSerializationEnvelope toSend = new SoapSerializationEnvelope(SoapEnvelope.VER11);
@@ -218,7 +213,21 @@ public class AdvanceSearchActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void results){
             Log.i(TAG, "onPostExecute");
-            textViewResult.setText(result);
+            //textViewResult.setText(result);
+            try{
+                JSONArray jsonArray = new JSONArray(result);
+                String list = "";
+
+                for(int i = 0; i < jsonArray.length(); i++){
+                    JSONObject object = jsonArray.getJSONObject(i);
+
+                    list += "Run: " + object.getString("run") + "\n" +
+                            "Nombre: " + object.getString("nombre") + "\n\n";
+                }
+                textViewResult.setText(list);
+            }catch(JSONException ex){
+                ex.printStackTrace();
+            }
         }
 
         @Override
