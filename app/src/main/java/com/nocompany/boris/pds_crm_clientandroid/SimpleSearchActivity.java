@@ -23,7 +23,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
     Button buttonBuscarSimple;
 
     String IpWS = "192.168.20.38"; //ej 192.168.0.1
-    String NAMESPACE = "http://service";
+    String NAMESPACE = "http://query.addProperty(propInf);service";
     String URL = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO?wsdl";
     String SOAP_ACTION = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO";
     String METHOD_NAME = "busquedaSimple"; //busquedaSimpleReturn cadenaBusqueda
