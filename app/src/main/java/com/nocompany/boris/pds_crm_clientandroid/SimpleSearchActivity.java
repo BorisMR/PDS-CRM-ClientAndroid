@@ -22,13 +22,13 @@ public class SimpleSearchActivity extends AppCompatActivity {
     TextView textViewResult;
     Button buttonBuscarSimple;
 
-    String IpWS = "192.168.20.136"; //ej 192.168.0.1
+    String IpWS = "192.168.1.40"; //ej 192.168.0.1
     String NAMESPACE = "http://service";
     String URL = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO?wsdl";
     String SOAP_ACTION = "http://"+IpWS+":8080/PDS-CRM/services/ServiceDAO";
     String METHOD_NAME = "busquedaSimple"; //busquedaSimpleReturn cadenaBusqueda
 
-    String criteria;
+    String cadenaBusquedaStr;
     String result;
     String TAG;
 
@@ -45,7 +45,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 if(!cadenaBusqueda.getText().toString().equals("") && cadenaBusqueda.getText().length() != 0){
-                    criteria = cadenaBusqueda.getText().toString();
+                    cadenaBusquedaStr = cadenaBusqueda.getText().toString();
                     generateAsyncTask task = new generateAsyncTask();
                     task.execute();
                 }else{
@@ -55,11 +55,11 @@ public class SimpleSearchActivity extends AppCompatActivity {
         });
     }
 
-    public void getResult(String criteria){
+    public void getResult(String cadenaBusquedaStr){
         SoapObject query = new SoapObject(NAMESPACE, METHOD_NAME);
         PropertyInfo propInf = new PropertyInfo();
         propInf.setName("cadenaBusqueda");
-        propInf.setValue(criteria);
+        propInf.setValue(cadenaBusquedaStr);
         propInf.setType(String.class);
 
         query.addProperty(propInf);
@@ -86,7 +86,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(String... params){
             Log.i(TAG, "doInBackground");
-            getResult(criteria);
+            getResult(cadenaBusquedaStr);
             return null;
         }
 

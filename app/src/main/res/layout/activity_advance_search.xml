@@ -23,39 +23,103 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextFieldRun"
-        android:layout_weight="0.03" />
+        android:id="@+id/editTextFieldRun" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/label_busqueda_nombre"
-        android:id="@+id/textViewNombre"
-        android:layout_weight="0.02" />
+        android:id="@+id/textViewNombre" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextFieldNombre"
-        android:layout_weight="0.05" />
+        android:id="@+id/editTextFieldNombre" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/label_busqueda_apellido"
-        android:id="@+id/textViewApellido"
-        android:layout_weight="0.05" />
+        android:id="@+id/textViewApellido" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextFieldApellido"
+        android:id="@+id/editTextFieldApellido" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/label_busqueda_email"
+        android:id="@+id/textViewEmail" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextFieldEmail" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/label_busqueda_fono"
+        android:id="@+id/textViewFono" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editTextFieldFono" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/label_busqueda_direccion"
+        android:id="@+id/textViewDireccion"
+        android:layout_weight="0.05" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextFieldDireccion" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/label_busqueda_genero"
+        android:id="@+id/textViewGenero"
+        android:layout_weight="0.05" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextFieldGenero" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_buscar"
+        android:id="@+id/buttonBuscarAvanzado"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewAdvanceRaw"
+        android:layout_gravity="center_horizontal"
         android:layout_weight="0.05" />
 
 </LinearLayout>
