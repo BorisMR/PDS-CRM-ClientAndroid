@@ -222,7 +222,12 @@ public class AdvanceSearchActivity extends AppCompatActivity {
                     JSONObject object = jsonArray.getJSONObject(i);
 
                     list += "Run: " + object.getString("run") + "\n" +
-                            "Nombre: " + object.getString("nombre") + "\n\n";
+                            "Nombre: " + object.get("nombre") + "\n" +
+                            "Apellido: " + object.get("apellido") + "\n" +
+                            "eMail: " + object.get("email") + "\n" +
+                            "Fono: " + object.get("fono") + "\n" +
+                            "Direccion: " + object.get("direccion") + "\n" +
+                            "Genero: " + object.getString("genero") + "\n\n";
                 }
                 textViewResult.setText(list);
             }catch(JSONException ex){

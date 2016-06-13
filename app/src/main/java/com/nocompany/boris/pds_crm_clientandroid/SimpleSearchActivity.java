@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
@@ -16,6 +19,9 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+/**
+ * Clase encargada de capturar la cadena, conectarse al SOAP y efectuar la busqueda
+ */
 public class SimpleSearchActivity extends AppCompatActivity {
 
     EditText cadenaBusqueda;
@@ -98,7 +104,26 @@ public class SimpleSearchActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void results){
             Log.i(TAG, "onPostExecute");
-            textViewResult.setText(result);
+            //textViewResult.setText(result);
+            try{
+                JSONArray jsonArray = new JSONArray(result);
+                String list = "";
+
+                for(int i = 0; i < jsonArray.length(); i++){
+                    JSONObject object = jsonArray.getJSONObject(i);
+
+                    list += "Run: " + object.getString("run") + "\n" +
+                            "Nombre: " + object.get("nombre") + "\n" +
+                            "Apellido: " + object.get("apellido") + "\n" +
+                            "eMail: " + object.get("email") + "\n" +
+                            "Fono: " + object.get("fono") + "\n" +
+                            "Direccion: " + object.get("direccion") + "\n" +
+                            "Genero: " + object.getString("genero") + "\n\n";
+                }
+                textViewResult.setText(list);
+            }catch(JSONException ex){
+                ex.printStackTrace();
+            }
         }
 
         @Override
