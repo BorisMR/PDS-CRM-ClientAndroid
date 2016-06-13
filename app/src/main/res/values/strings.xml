@@ -11,7 +11,7 @@
     <string name="label_busqueda_fono">Fono</string>
     <string name="label_busqueda_direccion">Direccion</string>
     <string name="label_busqueda_genero">Genero</string>
-    <string name="label_resultados">Resultados</string>
+    <string name="label_result">Resultados</string>
     <string name="label_resultados_true">Se encontraron los siguientes resultados</string>
     <string name="label_resultados_false">No se encontraron resultados</string>
     <string name="label_button_buscar">Buscar</string>
